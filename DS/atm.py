@@ -14,6 +14,11 @@ class Atm():
         4.press 4 to withdraw
         5.Anything else to exit
         """)
+        if int(user_input)>=6:
+            print("You press wrong button ")
+            print("Please press correct button")
+            self.menu()
+
         if user_input=='1':
             #cerate pin
             self.create_pin()
