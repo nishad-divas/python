@@ -1,7 +1,7 @@
 class Atm():
     def __init__(self):
-        self.pin=''
-        self.balance=0
+        self.__pin=''
+        self.__balance=0
         self.menu()
     
                         
@@ -36,18 +36,18 @@ class Atm():
 
     def create_pin(self):
         user_pin=input('enter your pin')
-        self.pin=user_pin
+        self.__pin=user_pin
 
         user_balance=int(input('enter your balance'))
-        self.balance=user_balance
+        self.__balance=user_balance
 
         print('pin created successfully')
         self.menu()
     def change_pin(self):
         old_pin=input("enter your old pin")
-        if old_pin==self.pin:
+        if old_pin==self.__pin:
            new_pin=input("enter new pin")
-           self.pin=new_pin
+           self.__pin=new_pin
            print('pin change successfully')
            
         else:
@@ -57,8 +57,8 @@ class Atm():
 
     def check_balance(self):
         user_pin=input('enter your pin')
-        if user_pin==self.pin:
-            print("your balance is ",self.balance)
+        if user_pin==self.__pin:
+            print("your balance is ",self.__balance)
         else:
             print("wrong pin and chl nikl")
         self.menu()
@@ -66,10 +66,10 @@ class Atm():
 
     def withdraw(self):
         user_pin=input('enter your pin')
-        if user_pin==self.pin:
+        if user_pin==self.__pin:
            amount=int(input('enter the amount'))
-           if amount <= self.balance:
-               self.balance=self.balance-amount
+           if amount <= self.__balance:
+               self.__balance=self.__balance-amount
                print('withdraw successfully')
            else:
                 print("gareeb gareeb")
